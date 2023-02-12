@@ -1,32 +1,32 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-name: Unit tests
+
+name: Unit tests # запуск юнит-тестов
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # позволяет запускать пайплайн вручную в вебморде гитхаба в экшнс
   push:
-    branches: ['main']
+    branches: ['main'] # опция при пуше указывать в массив нужные типы веток например releaze
   pull_request:
     branches: ['main']
-
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # сборка окружения с последним дистрибутивом убунты в джобе
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [18.x] # опция указания в массиве разных версий node.js
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+    steps: #степы выполнения,с - начинается новый степ
+      - uses: actions/checkout@v3 # переключает ветку
+      - name: Use Node.js ${{ matrix.node-version }} # создает окружение для запуска тестов
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install deps
-        run: npm ci
+      - name: Install deps # установка зависимостей
+        run: npm ci # запуск тестов
 
       - name: Run tests
         run: npm run test:coverage
