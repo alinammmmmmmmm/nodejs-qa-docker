@@ -5,9 +5,9 @@ name: Unit tests
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 
 jobs:
   build:
@@ -16,14 +16,14 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: 'npm'
 
       - name: Install deps
         run: npm ci
@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload coverage
         uses: actions/upload-artifact@v3
-        with: 
+        with:
           name: coverage
           if-no-files-found: error
           path: ./coverage
