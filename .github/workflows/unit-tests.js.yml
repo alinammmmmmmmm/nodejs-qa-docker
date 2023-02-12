@@ -31,16 +31,16 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      # - name: Upload Artifact
-      # uses: actions/upload-artifact@v3
-      # with:
-      #   name: report
-      #   if-no-files-found: error
-      #   path: ./jest-html-report
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          if-no-files-found: error
+          path: ./jest-html-report
 
-      # - name: Upload coverage
-      # uses: actions/upload-artifact@v3
-      # with: 
-      #   name: coverage
-      #   if-no-files-found: error
-      #   path: ./coverage
+      - name: Upload coverage
+        uses: actions/upload-artifact@v3
+        with: 
+          name: coverage
+          if-no-files-found: error
+          path: ./coverage
