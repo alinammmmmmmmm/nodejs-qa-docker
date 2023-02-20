@@ -52,7 +52,7 @@ jobs:
       with:
         folder: jest-html-report
         clean: true
-        token: ${{ secrets.TOKEN_TO }}
+        token: ${{ secrets.TOKEN}}
 
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
