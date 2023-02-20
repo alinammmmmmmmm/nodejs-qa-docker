@@ -6,7 +6,9 @@ name: Full tests
 on:
   workflow_dispatch:
   release:
-    types: ["prereleased"]
+    types: ["prereleased"] #прогон тестов перед релизом(видимо пуш в прод)
+  schedule:
+    - cron: "* 8 * * 1-5" #крон запуска билда в 8 утра каждый будний день
 
 jobs:
   build:
@@ -45,12 +47,12 @@ jobs:
         if-no-files-found: error
         path: ./coverage
 
-    - name: Deploy
+    - name: Deploy #джоба деплоя с отчётом тестов и алертом результата в тг 
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: jest-html-report
         clean: true
-        token: ${{ secrets.TOKEN }}
+        token: ${{ secrets.TOKEN_TO }}
 
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
