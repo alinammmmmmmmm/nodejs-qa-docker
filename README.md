@@ -1,33 +1,4 @@
-# CI/CD
-
-- Кто работал с системами CI/CD? И с какими?
-
-Github Actions, Gitlab, Bamboo, CircleCI, Jenkins, Teamcity.
-
-- А зачем нам все это? CI и CD, что это?
-
-удобный релиз + доставка кода.
-автоматизация процессов.
-тесты сразу как запушили.
-
-Не баш скрипты, а множество баш скриптов + знание людей.
-
-Не надежно + траты человека часов.
-
-CI/CD
-
-цена + штат
-
-Github Actions, Gitlab, Bamboo, CircleCI, Jenkins, Teamcity.
-
-Github Actions и Jenkins - они бесплатные.
-
-- на что можно поделить?
-
-Pipeline - запускать пайплайны(последовательность действий).
-Runner - это грубо говоря сервера, где запускаются наши пайплайны.
-Features - нотификации, интеграции, удобный интерфейс. Docker registry или npm registiry.
-
+# 
 Наше тех. задание.
 
 Создать pipeline со следующими требования:
@@ -42,7 +13,6 @@ Features - нотификации, интеграции, удобный инте
 - Cron job с полным набором.
 
 Как мы запускаем наши пайплайны:
-Опишите последовательность действий которые нужно сделать с git-репозиторием, чтобы запустить тесты.
 
 1. Сколнировать репозиторий.
 2. npm i
@@ -69,57 +39,10 @@ s m H M Y Weekday
 
 "0 2 * * 1-5"
 
-[16.x]
-
-[14.x, 16.x, 18.x] - такой подход необходим для пакетов nodeJS
-
 - run: npm ci // install
 - run: npm run build --if-present // build если надо
 - run: npm test
-
-docker build . --tag nlapshin/node-docker-qa - собирает образ и задаем ему имя nlapshin/node-docker-qa
-
-Число 18
-
-docker build ./path/to/directory Точка - это контекст(в разрезе файловой системы) запуска
-
-docker ps - посмотреть список всех запущенных контейнеров.
-docker rm <name> - это удалить контейнер
-docker run -it - запустить в интерактивном режим
-docker exec -it my-qa-container sh - подключить к терминалу контейнера
-
-1. Есть билд-сервер, который собирает образы.
-2. Мы имея систему CI/CD жмек кнопку собрать образ.
-3. Образ собирается, вешает тэг и публикуется в registry.
-4. Нажимаем кнопку, которая говорит другому серверу(скачай образ с таким тэгом и запусти его)
 =======
 - run: npm ci // install
 - run: npm run build --if-present // build если надо
 - run: npm test
-
-
-Что я сделал?
-1. Создал ветку: git checkout -b new-feature
-2. git push --set-upstream origin new-feature 
-3. Добавил код(любой)
-4. git add .
-5. git commit -m 'New commit'
-6. git push
-7. Пошел на github и создал pull request
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-
-// Что нужно реализовать?
-
-1. Создать бота(botFather)
-2. Бот может слать конкретному человеку или в приватный чат. Создать чат и добавить туда бота.
-3. Нужно получить secrets: token(выдает botFather) и id пользователя или чата(через API).
-4. Добавить эти secrets в github
-5. Создать step
-
-
-https://api.telegram.org/bot/getUpdates
-
-
-// Token: 5897961554:AAHNK31px2AqgHCtSeggzv-Ni7OvnQUGZ1c
-// ChatId: -892666022
