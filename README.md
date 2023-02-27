@@ -2,6 +2,7 @@
 описание работы pipeline в CI:
 - собирает докер-образ из /.github/workflows/api-tests.js.yml и запускает тесты /src/specs/index.spec.js при создании pull-request в ветку main
 - собирает докер-образ из .github/workflows/releaze-tests.js.yml и запускает тесты при создании релизов
+- собирает докер-образ по action pages build and deployment с архивом проекта в артефакте
 - генерирует report и coverage в артефактах сборки
 - настроена нотификация ссылки на коммит в Telegram при запуске релизных тестах
 - добавлена Cron job при запуске фул релизных тестах
