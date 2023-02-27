@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci
 
-COPY jest.local.js jest.config.js
+COPY jest.local.js jest.local.js
 COPY babel.config.json babel.config.json
 COPY src ./src
 
