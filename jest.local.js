@@ -4,9 +4,17 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
   },
-//   testMatch: ['**/specs/**/index.spec.js'],
-//   testRunner: 'jest-jasmine2',
-//   setupFilesAfterEnv: ['jest-allure/dist/setup'],
+  testMatch: ['**/specs/**/index.spec.js'],
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        publicPath: './jest-html-report',
+        filename: 'report.html',
+      },
+    ],
+  ],
   globals: {
     testTimeout: 50000,
   },
