@@ -78,7 +78,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '/home/runner/work/nodejs-qa-docker/nodejs-qa-docker/jest-html-report/report.html'
+          path: '/home/runner/work/nodejs-qa-docker/nodejs-qa-docker/jest-html-report/jest-html-reporters-attach/report/report.html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
