@@ -80,7 +80,7 @@ jobs:
           # Upload entire repository
           #https://github.com/alinammmmmmmmm/nodejs-qa-docker/suites/11351316266/artifacts/583532320/report.html
           # path: './suites/{}/artifacts/{}/report.html'
-          path: '.README.md'
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
