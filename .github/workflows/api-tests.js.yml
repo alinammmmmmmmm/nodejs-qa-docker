@@ -47,18 +47,8 @@ jobs:
         run: npm run test:coverage
         continue-on-error: true
 
-      # - name: Publish report
-      #   job:
-      #     artifacts:
-      #       paths:
-      #         - ./jest-html-report/report.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./jest-html-report/report.html
-          destination: https://alinammmmmmmmm.github.io/nodejs-qa-docker/jest-html-report
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
