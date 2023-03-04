@@ -58,7 +58,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./jest-html-report/report.html
-          destination: https://alinammmmmmmmm.github.io/nodejs-qa-docker/jest-html-report/report.html
+          destination: https://alinammmmmmmmm.github.io/nodejs-qa-docker/jest-html-report
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
