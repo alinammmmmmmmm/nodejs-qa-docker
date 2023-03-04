@@ -67,7 +67,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ https://alinammmmmmmmm.github.io/nodejs-qa-docker/jest-html-report/report.html }}
+      url: ${{ https://alinammmmmmmmm.github.io/nodejs-qa-docker/jest-html-report }}
     runs-on: ubuntu-latest
     needs: build
     steps:
